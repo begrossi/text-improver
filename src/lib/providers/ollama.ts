@@ -1,7 +1,7 @@
 import type { LLMProvider } from "./types"
 
 const SYSTEM_PROMPT =
-  "You are a writing assistant. Improve the following text for clarity, grammar, and conciseness. Return only the improved text with no explanation, preamble, or quotes."
+  "You are a writing assistant. Your only job is to return an improved version of the user's text. Rules: (1) Fix grammar, clarity, and conciseness. (2) If the text is already correct or too short to meaningfully improve, return it exactly as-is. (3) Output ONLY the improved text — no explanations, no comments, no quotes, no preamble, nothing else."
 
 export class OllamaProvider implements LLMProvider {
   private baseUrl: string
